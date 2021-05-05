@@ -115,7 +115,7 @@ std::string BpfLevelToString(BpfLevel bpfLevel) {
 static BpfLevel getUncachedBpfSupportLevel() {
     unsigned kver = kernelVersion();
 	
-    uint64_t disableBpf = GetUintProperty<uint64_t>("ro.bpf.disabled", 0);
+    uint64_t disableBpf = base::GetUintProperty<uint64_t>("ro.bpf.disabled", 0);
     if (disableBpf == 1)
         return BpfLevel::NONE;
 		
